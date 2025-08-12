@@ -1,0 +1,619 @@
+/* Reset and base */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+    line-height: 1.5;
+    padding: 1rem 2rem;
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6, strong {
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+  }
+  p {
+    margin: 0 0 1rem 0;
+    color: #444;
+  }
+  small {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  /* Orange accent */
+  .accent-orange {
+    color: #f37021;
+    font-weight: 700;
+    font-size: 1.475rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 0.25rem;
+    position: relative;
+    bottom: 10px;
+  }
+  .accent-orange::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    height: 2px;
+    width: 40px;
+    background: #f37021;
+    border-radius: 2px;
+    
+  }
+  /* Container for main blocks */
+  .container-wide {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Section 1 - Our Trusted clients */
+  #trusted-clients {
+    max-width: 900px;
+    margin: 3rem auto 5rem auto;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  #trusted-clients p.description {
+    font-size: 1rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+    color: #444;
+  }
+
+  /* Section 1 - inner content */
+  .trusted-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  /* Left side - circular image with small round images overlapping */
+
+
+
+
+
+
+
+
+
+  .trusted-image-section {
+    /* flex: 1 1 320px; */
+    position: relative;
+    width: 320px;
+    height: 320px;
+    min-width: 320px;
+    min-height: 320px;
+    margin: 0 auto;
+  }
+  .trusted-image-section .main-image {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+    border: 8px solid #fff;
+    box-shadow: 0 0 20px rgba(243, 112, 33, 0.25);
+    object-fit: cover;
+    display: block;
+    position: relative;
+    /* z-index: 2; */
+    background-color: #eee;
+  }
+  /* faint large circles behind main image */
+  .trusted-image-section::before,
+  .trusted-image-section::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 1.5px dotted #f37021;
+    top: 50%;
+    left: 50%;
+    transform: translate(-57%, -57%);
+    z-index: 1;
+  }
+  .trusted-image-section::before {
+    width: 350px;
+    height: 350px;
+  }
+  .trusted-image-section::after {
+    width: 260px;
+    height: 260px;
+    top: 48%;
+    left: 48%;
+  }
+  /* small circular avatars positioned around main image */
+  .trusted-image-section .small-avatar {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    object-fit: cover;
+    background-color: #eee;
+  }
+  /* Positions clockwise around the circle */
+  .small-avatar.top-left {
+    top: -15%;
+    left: 13%;
+  }
+  .small-avatar.top-right {
+    top: 4%;
+    right: 5%;
+    border-radius: 50%;
+  }
+  .small-avatar.bottom-left {
+    /* bottom: 12%; */
+    left: -18%;
+    top: 45%;
+
+  }
+  .small-avatar.bottom-right {
+    bottom: 20%;
+    right: 5%;
+  }
+ .bottom {
+    left: 18%;
+  }
+
+  /* Right side - text content */
+  .trusted-text-section {
+    flex: 1 1 500px;
+    max-width: 520px;
+    text-align: left;
+  }
+  .trusted-text-section .accent-orange.small-title {
+    margin-bottom: 1rem;
+    font-size: 1.275rem;
+    letter-spacing: 0.12em;
+  }
+  .trusted-text-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .trusted-text-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+  }
+  .trusted-text-section ul li {
+    position: relative;
+    padding-left: 1.3rem;
+    margin-bottom: 0.9rem;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    line-height: 1.4;
+  }
+  .trusted-text-section ul li::before {
+    content: "•";
+    color: #f37021;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+  }
+  .trusted-text-section .metrics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    border-top: 1px solid #e1e1e1;
+    padding-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.9rem;
+    color: #666;
+    justify-content: space-between;
+  }
+  .metric-item {
+    flex: 1 1 130px;
+    border-right: 1px solid #eee;
+    padding-right: 1rem;
+    font-weight: 700;
+    color: #222;
+    font-size: 1.25rem;
+    user-select: none;
+  }
+  .metric-item:last-child {
+    border-right: none;
+  }
+  .metric-label {
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #312f2f;
+    margin-top: 0.35rem;
+  }
+  .metric-right-text {
+    flex: 1 1 180px;
+    font-weight: 400;
+    font-size: 0.95rem;
+    text-align: right;
+    color: #272525;
+    user-select: none;
+    min-width: 150px;
+  }
+ 
+
+  /* Section 2 - What Is Visionet? and cards */
+
+  #visionet-section {
+    max-width: 1200px;
+    margin: 5rem auto 5rem auto;
+    padding: 0 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+  }
+  #visionet-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem 0 0 0;
+
+  }
+  #visionet-header h2 {
+    flex: 1 1 38%;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #1a1a1a;
+  }
+  #visionet-header p {
+    flex: 1 1 58%;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    max-width: 620px;
+    margin: 0;
+    line-height: 1.45;
+    user-select: text;
+  }
+
+  /* Visionet cards container */
+  .visionet-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    grid-gap: 1.8rem;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+
+    
+
+  }
+  /* Vision card base style */
+  .visionet-card {
+    background-color: rgb(241, 236, 236);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 4px 10px -3px;
+    padding: 2rem 2rem 2rem 2rem;
+    position: relative;
+    min-height: 280px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    user-select: text;
+
+  }
+  .visionet-card:hover{
+    box-shadow:
+    6px 6px 10px rgba(0,0,0,0.05),
+    12px 12px 18px rgba(0,0,0,0.25);
+  transform: translateY(-4px);
+  }
+
+  .visionet-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+    color: #222;
+  }
+  .visionet-card p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.46;
+    margin: 0;
+    margin-top: auto;
+  }
+
+  /* Icons styled with svg container */
+  .visionet-card .icon {
+    position: absolute;
+    /* top: 1.5rem; */
+    right: 1.6rem;
+    width: 60px;
+    height: 60px;
+    stroke: #000;
+    stroke-width: 1.6px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.85;
+    transition: stroke 0.3s ease;
+  }
+  /* Pink accent stroke */
+  .visionet-card .icon circle,
+  .visionet-card .icon path,
+  .visionet-card .icon line {
+    stroke: #e50072;
+  }
+  /* Change icon stroke on card hover */
+  .visionet-card:hover .icon {
+    stroke: #f37021;
+    opacity: 1;
+    font-size: 20px;
+  }
+
+
+  /* Section 3 - Legacy of engineering */
+
+  #legacy-section {
+    max-width: 1200px;
+    margin: 8rem auto 6rem auto;
+    padding: 0 2rem;
+    text-align: center;
+  }
+  #legacy-section h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    line-height: 1.25;
+    color: #111;
+    user-select: none;
+  }
+  /* Legacy cards container */
+  .legacy-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.2rem;
+    user-select: none;
+  }
+  .legacy-card {
+    /* background-color: #eee;*/
+    background-color: rgb(241, 236, 236);
+    border-radius: 10px;
+    box-shadow: 6px 12px 18px rgba(0,0,0,0.09);
+    padding: 2rem 1.7rem 2rem 2rem;
+    width: 220px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    user-select: none;
+    cursor: default;
+    transition: box-shadow 0.3s ease;
+    border: 1px solid rgb(238, 233, 233);
+  }
+  .legacy-card:hover {
+    /* box-shadow: 6px 14px 25px rgba(243, 112, 33, 0.3); */
+    box-shadow:
+        6px 6px 10px rgba(0,0,0,0.05),
+        12px 12px 18px rgba(0,0,0,0.25);
+      transform: translateY(-4px);
+  }
+  .legacy-card svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke: #e50072;
+    stroke-width: 1.75px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    user-select: none;
+  }
+  /* Card text area */
+  .legacy-card strong {
+    font-size: 1.4rem;
+    color: #111;
+    user-select: none;
+  }
+  .legacy-card small {
+    font-size: 0.85rem;
+    color: #444;
+    user-select: none;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 904px) {
+    #trusted-clients .trusted-main {
+      flex-direction: column;
+      max-width: 100%;
+    }
+    .trusted-text-section {
+      text-align: center;
+      max-width: 100%;
+    }
+    .trusted-text-section h2 {
+      font-size: 1.4rem;
+    }
+    .trusted-text-section .metrics {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .metric-item, .metric-right-text {
+      text-align: center;
+      border: none !important;
+      flex: auto;
+      min-width: auto;
+    }
+  }
+  @media (max-width: 600px) {
+    #visionet-header {
+      flex-direction: column;
+    }
+    #visionet-header h2 {
+      font-size: 1.6rem;
+    }
+    #visionet-header p {
+      flex: auto;
+      max-width: 100%;
+      font-size: 0.9rem;
+    }
+    .visionet-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 420px) {
+    .legacy-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    .legacy-card {
+      width: 80vw;
+      max-width: 320px;
+    }
+  }
+
+  /* Animation: bottom logos moving right to left infinitely */
+
+.motion-body{
+    max-width: 100%;
+    text-align: center;
+  }
+  .motion-body h2{
+    font-size: 23px;
+    color: rgb(241, 83, 83);
+    text-decoration: underline;
+  }
+  
+  .motion-body p{
+    font-size: 1.2rem;
+  }
+  
+    .marquee-container {
+      overflow: hidden;
+      width: 100%;
+      display: flex;
+    }
+  
+    .marquee {
+      display: flex;
+      gap: 10rem;
+      animation: moveRightToLeft 35s linear infinite;
+      align-items: center;
+    }
+  
+    .logo-container-mar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 200px;
+      height: 170px;
+      margin-top: 35px;
+    }
+  
+    /* Responsive adjustments */
+    @keyframes moveRightToLeft {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    @media (max-width: 640px) {
+      .logo-container {
+        width: 120px;
+        gap: 1rem;
+      }
+    }
+    @media (max-width: 420px) {
+      .legacy-card {
+        width: 280px;
+      }
+      .trusted-main{
+        display: flex;
+       
+
+      }
+   
+      .trusted-image-section {
+        /* flex: 1 1 320px; */
+        position: relative;
+        width: 320px;
+        height: 320px;
+        min-width: 320px;
+        min-height: 320px;
+        margin: 0 auto;
+      }
+      .trusted-image-section .main-image {
+        width: 45%;
+        height: 45%;
+        border-radius: 50%;
+        border: 8px solid #fff;
+        box-shadow: 0 0 20px rgba(243, 112, 33, 0.25);
+        object-fit: cover;
+        display: block;
+        position: relative;
+        /* z-index: 2; */
+        background-color: #eee;
+      }
+      .main-image{
+        left: 18%;
+        top: 20%;
+      }
+      /* faint large circles behind main image */
+      .trusted-image-section::before,
+      .trusted-image-section::after {
+        max-width: 210px;
+        max-height: 210px;
+        margin-top: -10px;
+        position: absolute;
+        border-radius: 50%;
+        /* border: 1.5px dotted #f37021; */
+        top: 50%;
+        left: 45%;
+        transform: translate(-57%, -57%);
+        z-index: 1;
+      }
+      .small-avatar.top-left {
+        top: 8%;
+        /* left: 13%; */
+      }
+      .small-avatar.top-right {
+        top: 15%;
+        right: 27%;
+        border-radius: 50%;
+      }
+      .small-avatar.bottom-left {
+        left: 2%;
+    
+      }
+      .small-avatar.bottom-right {
+        bottom: 32%;
+        right: 25%;
+      }
+     .bottom {
+      bottom: 19%;
+      left: 28%;
+      }
+
+    }
+    @media (max-width: 360px) {
+      .legacy-card {
+        max-width: 240px;
+      }
+    }
+    @media (max-width: 420px) {
+      .legacy-card {
+        width: 260px;
+        /* gap: 1rem; */
+      }
+    }
+  
